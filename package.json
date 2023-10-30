@@ -1,0 +1,31 @@
+{
+  "name": "autologin-cau",
+  "version": "1.0.0-beta",
+  "description": "自动登录校网的\"小\"程序",
+  "author": {
+    "name": "Disy920"
+  },
+  "main": "./application_launch/index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^27.0.2"
+  },
+  "build": {
+    "appId": "cn.disy920.autologin_cau",
+    "copyright": "Disy",
+    "productName": "CAU 校网自动登录器",
+    "icon": "icon.jpg",
+    "win": {
+      "target": [
+        "portable"
+      ]
+    }
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "electron-store": "^4.0.0",
+    "node-addon-api": "^7.0.0"
+  }
+}

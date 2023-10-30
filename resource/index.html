@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>CAU 校网自动登录器</title>
+
+    <meta name="author" content="Disy">
+
+    <link rel="stylesheet" href="./css/main-style.css">
+</head>
+<body>
+<div class="title-bar">
+    <div class="draggable-region">
+        <img src="./img/favicon.png" alt="logo">
+        <div class="title">
+            CAU 校网自动登录小助手 | author: Disy
+        </div>
+    </div>
+    <div class="title-btn">
+        <div title="最小化到托盘" class="minimize win-btn" onclick="mainWindows.toMin()"></div>
+        <div title="最大化" class="maximize win-btn" onclick="mainWindows.toMax()"></div>
+        <div title="关闭" class="close win-btn" onclick="mainWindows.close()"></div>
+    </div>
+</div>
+
+<div class="login-container">
+    <div class="form-box">
+        <div class="login-box">
+            <h1>LOGIN</h1>
+            <input id="username-input" type="text" placeholder="校网学号">
+            <input id="pwd-input" type="password" placeholder="密码">
+            <br>
+            <button id="login-btn">登录</button>
+            <br><br>
+            <div class="remember-me-container">
+                <input id="remember-me-box" type="checkbox">
+                <span>记住我</span>
+            </div>
+        </div>
+
+        <div class="waiting-container">
+            <h2>与校网网关通信中...</h2>
+            <img src="./img/wait.svg" alt="waiting">
+        </div>
+
+        <div class="timer-container">
+            <h3>连接成功！将在以下时间后再次请求连接：</h3>
+            <br>
+            <h2 id="timer">10:00</h2>
+            <img src="./img/timer.svg" alt="timer">
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="./js/render.js"></script>
+<script type="text/javascript" src="js/storage.js"></script>
+<script type="text/javascript" src="./js/components/modal.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/windows.js"></script>
+</html>
