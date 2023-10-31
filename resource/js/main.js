@@ -55,12 +55,19 @@ function login(fadeOutEle) {
         axios
             .get("http://10.7.250.8/drcom/login?callback=analyzerResult&DDDDD=" + account + "%40cau&upass=" + password + "&0MKKey=123456&R1=0&R3=0&R6=0&para=00&v6ip=&v=1786")
             .then(
-                (response) => {eval(response.data);},
+                (response) => {eval(response.data)},
                 (reason) => {
                     new Modal({
                         type: "error",
                         text: "网关通讯失败，原因：" + reason
                     }).show();
+
+                    let loginBox = document.getElementsByClassName("login-box")[0];
+
+                    fadeOut(waitingBox, 400);
+                    setTimeout(() => {
+                        fadeIn(loginBox, 200, "flex");
+                    });
                 });
     }, 450);
 }
